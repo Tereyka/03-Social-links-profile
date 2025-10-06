@@ -1,3 +1,11 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
 @font-face {
     font-family: "Inter";
     src: url('./assets/fonts/Inter-Regular.ttf') format('truetype');
@@ -32,114 +40,86 @@
 }
 
 body {
-    margin: 0;
     font-family: var(--font-family-base);
     background-color: var(--color-grey-900);
     color: var(--color-white);
-    font-size: 0.875rem;
+    font-size:0.875rem;
+    padding: 1rem;
 }
 
 .card-container {
     display: flex;
     justify-content: center;
-    align-items: center;    
-    padding: 1rem;
+    align-items: center;
     min-height: 100vh;
 }
 
 .card-content {
-    box-sizing: border-box;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    width: clamp(325px, 27vw, 385px);
+    width:100%;   /*берём всю доступную ширину ... */
+    max-width: 385px;  /*... но не шире дизайна */
     padding: 2.5rem;
-    max-width: 100%;
     background-color: var(--color-grey-800);
     border-radius: 0.875rem;
 }
 
-
 .avatar {
     display: block;
-    width: clamp(85px, 6.3vw, 90px);
-    height: auto;
-    margin: 0 auto;
+    margin-inline:auto;
+    width:100%;
+    max-width: 90px;
     border-radius: 50%;
-    margin-bottom: 1.6rem;
+    margin-bottom:1.6rem;
 }
 
 .name {
-    margin: 0;
     color: var(--color-white);
     font-weight: 600;
-    font-size:1.5rem;
+    font-size: 1.5rem;
     margin-bottom:0.75rem;
 }
 
 .profile-location {
-    margin:0;
-    color:var(--color-green);
+    color: var(--color-green);
     font-weight: 700;
     margin-bottom: 1.75rem;
-    font-size: 0.875rem;
 }
 
-.profile-bio{
-    margin:0;
+.profile-bio {
     color: var(--color-white);
     font-weight: 400;
-    margin-bottom:1.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.social-links{
+.social-links-list{
     display:flex;
     flex-direction: column;
     gap:0.92rem;
-
-}
-.social-links a{
-    box-sizing: border-box;
-    text-decoration: none;
-    text-align: center;
-    background-color: var(--color-grey-700);
-    color: var(--color-white);
-    width: clamp(278px, 21vw, 305px);
-    padding: 0.87rem;
-    border-radius: 0.5rem;
-
-}
-
-/* .social-links-list{
-    margin:0;
-    padding: 0;
-    list-style-type: none;
-    display:flex;
-    flex-direction: column;
-    gap:0.92rem;
+    width:100%;
 }
 
 .social-links-item a{
-    box-sizing: border-box;
-    display:block;
-    text-align: center;
     background-color: var(--color-grey-700);
     border-radius: 0.5rem;
-    line-height: 17px;
-    font-size: 0.875rem;
-    color: var(--color-white);
-    text-decoration: none;
-    font-weight: 700;
+    display:block;
+    text-align: center;
     padding: 0.87rem;
-} */
-
-.social-links a:hover{
-    background-color: var(--color-green);
-  color: var(--color-grey-800);
-  transform: translateY(-3px); /* лёгкое поднятие */
+    color: var(--color-white);
+    font-weight: 700;
 }
 
-.social-links a:active {
-  transform: translateY(0);
-  filter: brightness(0.9);
+@media(hover:hover){  /*не использовать эффект наведения на тач-устройствах */
+    .social-links-item a:hover {
+    background-color: var(--color-green);
+    color: var(--color-grey-800);
+    transform: translateY(-3px); /* лёгкое поднятие */
+}
+
+}
+
+.social-links-item a:active {
+    transform: translateY(0);
+    filter: brightness(0.9);
 }
