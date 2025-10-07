@@ -110,14 +110,6 @@ body {
     color: var(--color-white);
     font-weight: 700;
 }
-/* 
-@media (hover:hover){  не использовать эффект наведения на тач-устройствах 
-    .social-links-item a:hover {
-    background-color: var(--color-green);
-    transition: background-color 0.8s;
-    color: var(--color-grey-800);
-    transform: translateY(-3px); 
-} */
 
 @media (hover: hover) and (pointer: fine) {
   .social-links-item a:hover {
