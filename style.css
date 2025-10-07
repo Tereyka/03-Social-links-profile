@@ -127,18 +127,27 @@ body {
     transition: background-color 0.2s, color 0.2s, transform .2s;
   }
 }
+
+.social-links-item a:active {
+    transition: transform 0.2s;
+    transform: translateY(0);
+    filter: brightness(0.9);
+}
+
 /* на всякий случай снимаем возможные hover-стили */
 @media (hover: none) and (pointer: coarse) {
   .social-links-item a:hover {
     background-color: var(--color-grey-700);
     color: inherit;
     transform: none;
-
   }
 }
 
-.social-links-item a:active {
-    transition: transform 0.2s;
-    transform: translateY(0);
-    filter: brightness(0.8);
+@media (hover: none) and (pointer: coarse) {
+  .social-links-item a:active {
+    background-color: var(--color-green);
+    color: var(--color-grey-800);
+    transform: none;
+    filter: none;
+  }
 }
