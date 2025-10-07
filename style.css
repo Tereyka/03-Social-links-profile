@@ -102,7 +102,7 @@ body {
 
 .social-links-item a{
     background-color: var(--color-grey-700);
-    transition: background-color 0.6s;
+    transition: background-color 0.8s;
     border-radius: 0.5rem;
     display:block;
     text-align: center;
@@ -110,17 +110,35 @@ body {
     color: var(--color-white);
     font-weight: 700;
 }
-
-@media(hover:hover){  /*не использовать эффект наведения на тач-устройствах */
+/* 
+@media (hover:hover){  не использовать эффект наведения на тач-устройствах 
     .social-links-item a:hover {
     background-color: var(--color-green);
     transition: background-color 0.8s;
     color: var(--color-grey-800);
-    transform: translateY(-3px); /* лёгкое поднятие */
+    transform: translateY(-3px); 
+} */
+
+@media (hover: hover) and (pointer: fine) {
+  .social-links-item a:hover {
+    background-color: var(--color-green);
+    color: var(--color-grey-800);
+    transform: translateY(-3px);
+    transition: background-color 0.2s, color 0.2s, transform .2s;
+  }
+}
+/* на всякий случай снимаем возможные hover-стили */
+@media (hover: none) and (pointer: coarse) {
+  .social-links-item a:hover {
+    background-color: var(--color-grey-700);
+    color: inherit;
+    transform: none;
+
+  }
 }
 
 .social-links-item a:active {
     transition: transform 0.2s;
     transform: translateY(0);
-    filter: brightness(0.9);
+    filter: brightness(0.8);
 }
